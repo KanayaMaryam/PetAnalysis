@@ -7,6 +7,7 @@ from keras.layers import Dense
 from keras.preprocessing.image import ImageDataGenerator
 import numpy as np
 from keras.preprocessing import image
+from keras.models import load_model
 
 classifier = Sequential();
 classifier.add (Conv2D(32, (3, 3), input_shape = (64, 64, 3), activation = 'relu'))
@@ -34,3 +35,4 @@ else:
     prediction = 'cat'
 
 print(prediction)
+classifier.save('my_model.h5')
